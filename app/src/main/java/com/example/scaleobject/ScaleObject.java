@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 public class ScaleObject extends Activity {
 
+    boolean Meters;
+    boolean English;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class ScaleObject extends Activity {
        final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
+       final EditText nextText = (EditText)findViewById(R.id.nextText);
        //TextView nextText = (TextView)findViewById(R.id.nextText);
 
         // Random x and y values that will be used until linked with other activity
@@ -45,18 +48,20 @@ public class ScaleObject extends Activity {
             public void onClick(View v) {
                 if (metersbutton.isChecked() == true) {
 
-                   // Makes the text box visible and usable
+                    // Makes the text box visible and usable
                     meterstext.setVisibility(View.VISIBLE);
 
-                   // Getting and parsing the value typed in the text box
-                    String si =  meterstext.getText().toString();
-                    double meterEntry = Double.parseDouble(si);
-
-                    // This is where the scale is created from the typed value and pixel difference
-                    double scale = meterEntry/pix;
+                     Meters = true;
+                    English = false;
                 }
+
+
             }
+
+
         });
+
+
 
         Englishbutton.setOnClickListener(new View.OnClickListener() {
 
@@ -67,6 +72,32 @@ public class ScaleObject extends Activity {
                     feettext.setVisibility(View.VISIBLE);
                     inchestext.setVisibility(View.VISIBLE);
 
+                   English = true;
+                    Meters = false;
+
+
+                }
+            }
+
+        });
+
+        nextText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (Meters = true){
+
+                    // Getting and parsing the value typed in the text box
+                    String si =  meterstext.getText().toString();
+                    double meterEntry = Double.parseDouble(si);
+
+                    // This is where the scale is created from the typed value and pixel difference
+                    double scale = meterEntry/pix;
+
+
+                }
+                else if(English = true){
+
                     // Getting and parsing the values typed in the text boxes
                     String ft = feettext.getText().toString();
                     double feetEntry = Double.parseDouble(ft);
@@ -76,10 +107,8 @@ public class ScaleObject extends Activity {
                     // This is where the scale is created and converted into meters per pixel
                     double scale = (feetEntry + (inchesEntry/12))/(m * pix);
 
-
                 }
             }
-
         });
 
         /**
