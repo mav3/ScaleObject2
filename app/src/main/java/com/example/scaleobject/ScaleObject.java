@@ -53,6 +53,10 @@ public class ScaleObject extends Activity {
 
                      Meters = true;
                     English = false;
+
+                    // Gets rid of opposite text being selected
+                    feettext.setVisibility(View.INVISIBLE);
+                    inchestext.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -75,6 +79,8 @@ public class ScaleObject extends Activity {
                    English = true;
                     Meters = false;
 
+                    // Gets rid of opposite text being selected
+                    meterstext.setVisibility(View.INVISIBLE);
 
                 }
             }
