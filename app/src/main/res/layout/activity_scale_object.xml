@@ -44,16 +44,32 @@
         android:clickable="true" />
 </RadioGroup>
 
-    <EditText
-        android:layout_width="150dp"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText_meters"
-        android:layout_marginTop="50dp"
-        android:text="@string/editText_meters"
-        android:textColor="#ffffffff"
-        android:visibility="invisible" />
+        android:layout_gravity="bottom">
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText_meters"
+            android:layout_marginTop="50dp"
+            android:text="@string/editText_meters"
+            android:textColor="#ffffffff"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="m"
+            android:id="@+id/meterUnits"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
 
     <EditText
         android:layout_width="150dp"
