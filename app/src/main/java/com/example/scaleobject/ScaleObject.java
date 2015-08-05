@@ -26,7 +26,9 @@ public class ScaleObject extends Activity {
        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
        final TextView nexttext = (TextView)findViewById(R.id.nextText);
-       //TextView nextText = (TextView)findViewById(R.id.nextText);
+       final TextView meterunit = (TextView)findViewById(R.id.meterUnits);
+       final TextView feetunit = (TextView)findViewById(R.id.feetUnits);
+       final TextView inchesunit = (TextView)findViewById(R.id.inchesUnits);
 
         // Random x and y values that will be used until linked with other activity
         int x1 = 200;
@@ -50,6 +52,7 @@ public class ScaleObject extends Activity {
 
                     // Makes the text box visible and usable
                     meterstext.setVisibility(View.VISIBLE);
+                    meterunit.setVisibility(View.VISIBLE);
 
                      Meters = true;
                     English = false;
@@ -57,6 +60,8 @@ public class ScaleObject extends Activity {
                     // Gets rid of opposite text being selected
                     feettext.setVisibility(View.INVISIBLE);
                     inchestext.setVisibility(View.INVISIBLE);
+                    feetunit.setVisibility(View.INVISIBLE);
+                    inchesunit.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -75,12 +80,15 @@ public class ScaleObject extends Activity {
                     // Makes the text boxes visible and usable
                     feettext.setVisibility(View.VISIBLE);
                     inchestext.setVisibility(View.VISIBLE);
+                    feetunit.setVisibility(View.VISIBLE);
+                    inchesunit.setVisibility(View.VISIBLE);
 
                    English = true;
                     Meters = false;
 
                     // Gets rid of opposite text being selected
                     meterstext.setVisibility(View.INVISIBLE);
+                    meterunit.setVisibility(View.INVISIBLE);
 
                 }
             }

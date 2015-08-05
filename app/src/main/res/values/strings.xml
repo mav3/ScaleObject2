@@ -6,8 +6,8 @@
     <string name="title_text">Select what units used to measure the object.</string>
     <string name="radioButton_meters">Meters</string>
     <string name="radioButton_English">Feet and Inches</string>
-    <string name="editText_meters">m</string>
-    <string name="editText_feet">ft</string>
-    <string name="editText_inches">in</string>
+    <string name="editText_meters"></string>
+    <string name="editText_feet"></string>
+    <string name="editText_inches"></string>
     <string name="nextText">Next</string>
 </resources>
