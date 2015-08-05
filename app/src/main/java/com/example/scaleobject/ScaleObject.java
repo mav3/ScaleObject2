@@ -25,7 +25,7 @@ public class ScaleObject extends Activity {
        final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
-       final EditText nexttext = (EditText)findViewById(R.id.nextText);
+       final TextView nexttext = (TextView)findViewById(R.id.nextText);
        //TextView nextText = (TextView)findViewById(R.id.nextText);
 
         // Random x and y values that will be used until linked with other activity
