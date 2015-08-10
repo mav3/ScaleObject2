@@ -71,6 +71,27 @@
             android:textColor="#ffffffff"
             android:visibility="invisible"/>
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText_centimeters"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="cm"
+            android:id="@+id/centimeterUnits"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff"
+            android:visibility="invisible"/>
+
     </LinearLayout>
 
 
@@ -99,15 +120,9 @@
             android:layout_gravity="bottom"
             android:textColor="#ffffffff"
             android:visibility="invisible" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <EditText
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
@@ -115,7 +130,7 @@
                 android:text="@string/editText_inches"
                 android:textColor="#ffffffff"
                 android:visibility="invisible"
-            android:layout_gravity="bottom" />
+            android:layout_weight="1" />
 
         <TextView
             android:layout_width="wrap_content"

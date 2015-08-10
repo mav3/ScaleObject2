@@ -20,15 +20,18 @@ public class ScaleObject extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale_object);
-       final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
-       final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
-       final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
-       final EditText feettext = (EditText)findViewById(R.id.editText_feet);
-       final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
-       final TextView nexttext = (TextView)findViewById(R.id.nextText);
-       final TextView meterunit = (TextView)findViewById(R.id.meterUnits);
-       final TextView feetunit = (TextView)findViewById(R.id.feetUnits);
-       final TextView inchesunit = (TextView)findViewById(R.id.inchesUnits);
+        final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
+        final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
+        final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
+        final EditText centimetertext = (EditText)findViewById(R.id.editText_centimeters);
+        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
+        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
+        final TextView nexttext = (TextView)findViewById(R.id.nextText);
+        final TextView meterunit = (TextView)findViewById(R.id.meterUnits);
+        final TextView centimeterunit = (TextView)findViewById(R.id.centimeterUnits);
+        final TextView feetunit = (TextView)findViewById(R.id.feetUnits);
+        final TextView inchesunit = (TextView)findViewById(R.id.inchesUnits);
+
 
         // Random x and y values that will be used until linked with other activity
         int x1 = 200;
@@ -40,7 +43,7 @@ public class ScaleObject extends Activity {
        final int m = 82021/25000;
 
         // Length between pixels equation
-       final double pix = ((((x1 - x2) ^ 2) + ((y1 - y2) ^ 2))) ^ (1/2);
+       final double pix = Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
         /**
          * This is where the different units can be selected and the proper text box appears for the
          * units to be converted from pixels to the selected units.
@@ -53,6 +56,8 @@ public class ScaleObject extends Activity {
                     // Makes the text box visible and usable
                     meterstext.setVisibility(View.VISIBLE);
                     meterunit.setVisibility(View.VISIBLE);
+                    centimetertext.setVisibility(View.VISIBLE);
+
 
                      Meters = true;
                     English = false;
@@ -99,7 +104,7 @@ public class ScaleObject extends Activity {
             @Override
             public void onClick(View v) {
 
-                if (Meters = true){
+                if (Meters == true){
 
                     // Getting and parsing the value typed in the text box
                     String si =  meterstext.getText().toString();
@@ -110,7 +115,7 @@ public class ScaleObject extends Activity {
 
 
                 }
-                else if(English = true){
+                else if(English == true){
 
                     // Getting and parsing the values typed in the text boxes
                     String ft = feettext.getText().toString();
