@@ -57,6 +57,7 @@ public class ScaleObject extends Activity {
                     meterstext.setVisibility(View.VISIBLE);
                     meterunit.setVisibility(View.VISIBLE);
                     centimetertext.setVisibility(View.VISIBLE);
+                    centimeterunit.setVisibility(View.VISIBLE);
 
 
                      Meters = true;
@@ -94,6 +95,8 @@ public class ScaleObject extends Activity {
                     // Gets rid of opposite text being selected
                     meterstext.setVisibility(View.INVISIBLE);
                     meterunit.setVisibility(View.INVISIBLE);
+                    centimetertext.setVisibility(View.INVISIBLE);
+                    centimeterunit.setVisibility(View.INVISIBLE);
 
                 }
             }
@@ -109,9 +112,11 @@ public class ScaleObject extends Activity {
                     // Getting and parsing the value typed in the text box
                     String si =  meterstext.getText().toString();
                     double meterEntry = Double.parseDouble(si);
+                    String cm = centimetertext.getText().toString();
+                    double centimeterEntry = Double.parseDouble(cm);
 
                     // This is where the scale is created from the typed value and pixel difference
-                    double scale = meterEntry/pix;
+                    double scale = (meterEntry + (centimeterEntry/100))/pix;
 
 
                 }
